@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redefinir Senha - OBSF</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a href="/">Início</a></li>
+        <li><a href="/sobre">Sobre Nós</a></li>
+        <li><a href="/projetos">Projetos</a></li>
+        <li><a href="/como-ajudar">Como Ajudar</a></li>
+        <li><a href="/contato">Contato</a></li>
+        <li><a href="/login">Login</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <div class="auth-container">
+        <div class="auth-header">
+            <h1>Redefinir Senha</h1>
+            <p>Digite seu e-mail para receber as instruções de redefinição</p>
+        </div>
+
+        <% if (typeof erros !== 'undefined' && erros.length > 0) { %>
+            <div class="notificacao erro">
+                <% erros.forEach(function(erro){ %>
+                    <p><%= erro.msg %></p>
+                <% }) %>
+            </div>
+        <% } %>
+
+        <% if (typeof sucesso !== 'undefined') { %>
+            <div class="notificacao sucesso">
+                <p><%= sucesso %></p>
+            </div>
+        <% } %>
+
+        <form class="auth-form" action="/redefinir" method="POST">
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required placeholder="Digite seu e-mail" value="<%= typeof email !== 'undefined' ? email : '' %>">
+            </div>
+
+            <button type="submit" class="btn-primary">Enviar Instruções</button>
+        </form>
+
+        <div class="auth-links">
+            <p><a href="/login">Lembrou da senha? Voltar ao login</a></p>
+            <p><a href="/cadastro">Não tem conta? Cadastre-se</a></p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 OBSF - Organização Brasileira Sem Fome</p>
+    <p>Juntos contra a fome no Brasil</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "obsf-site-20250828t205711z-1-001",
+  "version": "1.0.0",
+  "description": "Projeto OBS",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-validator": "^7.2.1"
+  }
+}
